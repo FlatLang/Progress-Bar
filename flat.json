@@ -1,0 +1,30 @@
+{
+  "name": "Progress-Bar",
+  "version": "0.1.0",
+  "description": "Console Progress Bar",
+  "author": "Braden Steffaniak",
+  "license": "ISC",
+  "defaultTarget": "es6",
+  "scripts": {
+    "test": "node dist/test.js"
+  },
+  "sources": {
+    "main": {
+      "mainClass": "flat/progressbar/ProgressBar",
+      "source": "src",
+      "dependencies": {
+        "github:FlatLang/System": "master",
+        "github:FlatLang/IO": "master",
+        "github:FlatLang/Stream": "master",
+        "github:FlatLang/Time": "master"
+      }
+    },
+    "test": {
+      "mainClass": "flat/progressbar/ProgressBar_TestSuite",
+      "source": "src/**/*_Test*.flat",
+      "dependencies": {
+        "github:FlatLang/Nest": "master"
+      }
+    }
+  }
+}
