@@ -21,7 +21,7 @@ class {
     return remainingMs.millisToTime(millis: false)
   }
 
-  public getProgressLog() -> String {
+  public getProgressLog(Int lineLength = 80) -> String {
     if (stepsToProcess == 0) {
       return ""
     }
@@ -36,7 +36,7 @@ class {
       " ".repeat(Math.max(0, stepsToProcess.toString().count - processedSteps.toString().count)) +
       processedSteps + "/" + stepsToProcess + " " +
       "eta " + " ".repeat(Math.max(0, 3 - etaValue.count)) + etaValue
-    let progressLength = 80 - prefix.count - suffix.count
+    let progressLength = lineLength - prefix.count - suffix.count
 
     var percentagePosition = 0
     var printedTip = false
